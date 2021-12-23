@@ -1,17 +1,6 @@
 <template>
   <div class="new-year">
-    <swiper
-    :slides-per-view="3"
-    :space-between="50"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-  >
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    ...
-  </swiper>
-    <!-- <div id="music" :class="musicPlay?'music-active':''" >
+    <div id="music" :class="musicPlay?'music-active':''" >
       <img class="music_disc" src="@/assets/newYear/music_disc.png" alt="">
       <img class="music_pointer" src="@/assets/newYear/music_pointer.png" alt="">
     </div>
@@ -45,20 +34,15 @@
       type="audio/mpeg" 
       src="http://www.imooc.com/activity/project/project1/audio/happynewyear.mp3"
     >
-    </audio> -->
+    </audio>
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'swiper';
-import 'swiper';
 
 export default {
   name:"newyear",
-  components: {
-      Swiper,
-      SwiperSlide,
- },
+ 
   data(){
     return{
       step:1,
@@ -68,10 +52,6 @@ export default {
   mounted(){
   },
   methods:{
-      onSwiper(){},
-      onSlideChange(){
-
-      },
 
     handleMusicPlay(){
       this.musicPlay = !this.musicPlay
