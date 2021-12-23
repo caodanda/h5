@@ -73,7 +73,7 @@ const router = new VueRouter({
 })
 
 router.afterEach(to=>{
-  let title = to.meta.title || '移动项目'
+  let title = to.meta.title || '移动H5'
   window.document.title = title;
   window.scrollTo(0,0)
 })
