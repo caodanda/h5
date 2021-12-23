@@ -1,10 +1,21 @@
 <template>
   <div class="new-year">
-    <div id="music" :class="musicPlay?'music-active':''" >
+    <swiper
+    :slides-per-view="3"
+    :space-between="50"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
+  >
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    ...
+  </swiper>
+    <!-- <div id="music" :class="musicPlay?'music-active':''" >
       <img class="music_disc" src="@/assets/newYear/music_disc.png" alt="">
       <img class="music_pointer" src="@/assets/newYear/music_pointer.png" alt="">
     </div>
-    <v-touch class="page" id="page1" v-if="step === 1" @swipeup="handeNextStep">
+    <div class="page" id="page1" >
       <div class="p1_lantern">
         <p class="p1_lantern_text">
           点击屏幕<br>开启好运
@@ -14,19 +25,19 @@
         <img  src="@/assets/newYear/p1_imooc.png" alt="">
         <p>新年新气象，万事顺心</p>
       </div>
-    </v-touch>
-    <v-touch class="page" id="page2" v-if="step === 2" @swipeup="handeNextStep" @swipedown="handePreStep">
+    </div>
+    <div class="page" id="page2" >
       <div class="p2_circle"></div>
       <div class="p2_2016"></div>
-    </v-touch>
-    <v-touch class="page" id="page3" v-if="step === 3" @swipedown="handePreStep">
+    </div>
+    <div class="page" id="page3" >
       <div class="p3_couplet">
         <img class="p3_couplet_second" src="@/assets/newYear/p3_couplet_second.png" alt="">
         <img class="p3_title" src="@/assets/newYear/p3_title.png" alt="">
         <img class="p3_couplet_first" src="@/assets/newYear/p3_couplet_first.png" alt="">
       </div>
       <img class="p3_blessing" src="@/assets/newYear/p3_blessing.png" alt="">
-    </v-touch>
+    </div>
     <audio 
       id="music-audio"
       style="display:none"
@@ -34,13 +45,20 @@
       type="audio/mpeg" 
       src="http://www.imooc.com/activity/project/project1/audio/happynewyear.mp3"
     >
-    </audio>
+    </audio> -->
   </div>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from 'swiper';
+import 'swiper';
+
 export default {
   name:"newyear",
+  components: {
+      Swiper,
+      SwiperSlide,
+ },
   data(){
     return{
       step:1,
@@ -50,6 +68,11 @@ export default {
   mounted(){
   },
   methods:{
+      onSwiper(){},
+      onSlideChange(){
+
+      },
+
     handleMusicPlay(){
       this.musicPlay = !this.musicPlay
       let music = document.getElementById('music-audio')
@@ -173,6 +196,7 @@ export default {
 #page2{
   background: url('../assets/newYear/p2_bg.jpeg') no-repeat;
   background-size: 100% 100%;
+  position: relative;
 }
 @keyframes p2_circle {
   0%{

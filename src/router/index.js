@@ -56,6 +56,14 @@ const routes = [
       title:"changcheng"
     }
   },
+  {
+    path:'/swiper',
+    component:()=>import('../components/swiper.vue'),
+    name:'swiper',
+    meta:{
+      title:"swiper学习"
+    }
+  },
 ]
 
 
