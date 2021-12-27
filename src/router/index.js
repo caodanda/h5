@@ -25,14 +25,6 @@ const routes = [
     }
   },
   {
-    path:'/child',
-    component:()=>import('../components/child.vue'),
-    name:'child',
-    meta:{
-      title:"逛庙会"
-    }
-  },
-  {
     path:'/show',
     component:()=>import('../components/show.vue'),
     name:'show',
@@ -40,32 +32,7 @@ const routes = [
       title:"猜猜我是谁"
     }
   },
-  {
-    path:'/mock',
-    component:()=>import('../components/mock.vue'),
-    name:'mock',
-    meta:{
-      title:"fastMock"
-    }
-  },
-  {
-    path:'/changcheng',
-    component:()=>import('../components/changcheng.vue'),
-    name:'changcheng',
-    meta:{
-      title:"changcheng"
-    }
-  },
-  {
-    path:'/swiper',
-    component:()=>import('../components/swiper.vue'),
-    name:'swiper',
-    meta:{
-      title:"swiper学习"
-    }
-  },
 ]
-
 
 const router = new VueRouter({
   mode:'history',

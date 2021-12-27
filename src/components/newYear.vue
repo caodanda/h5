@@ -1,6 +1,6 @@
 <template>
   <div class="new-year">
-    <div id="music" :class="musicPlay?'music-active':''" >
+    <div id="music" :class="musicPlay?'music-active':''" @click="handleMusicPlay">
       <img class="music_disc" src="@/assets/newYear/music_disc.png" alt="">
       <img class="music_pointer" src="@/assets/newYear/music_pointer.png" alt="">
     </div>
@@ -133,7 +133,6 @@ export default {
     transform: scale(1);
     opacity: 1;
   }
-  
 }
 .p1_lantern::before{
   content: "";

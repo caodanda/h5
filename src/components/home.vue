@@ -18,15 +18,14 @@ export default {
     return{
       activeIndex:null,
       list:[
-        {name:'新年好运来',route:'/newyear'},
-        {name:'逛庙会',route:'/child'},
-        {name:'猜猜我是谁',route:'/show'},
+        {name:'新年好',route:'/newyear'},
+        // {name:'逛庙会',route:'/child'},
+        {name:'猜一猜',route:'/show'},
       ]
     }
   },
   methods:{
     handleRoute(route){
-      // this.activeIndex = index
       this.$router.push(route)
     }
   }
