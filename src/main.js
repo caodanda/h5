@@ -2,14 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import 'lib-flexible/flexible.js'
-import vConsole from '@/utils/vconsole.js'
+import VConsole from "vconsole";
 import axios from 'axios'
 import VueTouch from 'vue-touch';
 Vue.use(VueTouch, {name: 'v-touch'});
 // vConsole 在开发环境中使用
 console.log('env',process.env.NODE_ENV)
 if(process.env.NODE_ENV === 'development'){
-  Vue.prototype.$vConsole = vConsole;
+  new VConsole()
+  // import vConsole from '@/utils/vconsole.js'
+  // Vue.prototype.$vConsole = vConsole;
 }
 
 Vue.config.productionTip = false
