@@ -10,8 +10,6 @@ Vue.use(VueTouch, {name: 'v-touch'});
 console.log('env',process.env.NODE_ENV)
 if(process.env.NODE_ENV === 'development'){
   new VConsole()
-  // import vConsole from '@/utils/vconsole.js'
-  // Vue.prototype.$vConsole = vConsole;
 }
 
 Vue.config.productionTip = false
