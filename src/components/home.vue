@@ -4,8 +4,9 @@
       <li 
         v-for="(item,index) in list" 
         :key="item.route" 
+
         :class="activeIndex === index ? 'active':''"
-        @touchend="handleRoute(item.route)"
+        @click="handleRoute(item.route)"
       >{{item.name}}</li>
     </ul>
   </div>
@@ -21,6 +22,9 @@ export default {
         {name:'新年好',route:'/newyear'},
         // {name:'逛庙会',route:'/child'},
         {name:'猜一猜',route:'/show'},
+        {name:'随机抽奖',route:'/lottery'},
+        {name:'动画学校',route:'/animate'},
+        {name:'后台',route:'/mana'},
       ]
     }
   },

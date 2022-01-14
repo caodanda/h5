@@ -32,6 +32,30 @@ const routes = [
       title:"猜猜我是谁"
     }
   },
+  {
+    path:'/lottery',
+    component:()=>import('../components/lottery.vue'),
+    name:'lottery',
+    meta:{
+      title:"随机抽奖"
+    }
+  },
+  {
+    path:'/animate',
+    component:()=>import('../components/animate.vue'),
+    name:'animate',
+    meta:{
+      title:"动画学习"
+    }
+  },
+  {
+    path:'/mana',
+    component:()=>import('../components/mana.vue'),
+    name:'mana',
+    meta:{
+      title:"后台-viewUI"
+    }
+  },
 ]
 
 const router = new VueRouter({
